@@ -248,7 +248,6 @@ function DynamicTable(props) {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -276,7 +275,6 @@ function DynamicTable(props) {
               {stableSort(characters, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((eachCharacter, index) => {
-                  const isItemSelected = isSelected(eachCharacter.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
