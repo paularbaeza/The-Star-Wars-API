@@ -7,7 +7,7 @@ import DynamicTable from '../Components/Table';
 function CharactersList() {
 
     const [characters, setCharacters] = useState([])
-    const [isFetching, setIsFetching] = useState(true)
+    const [isFetching, setIsFetching] = useState(true);
 
 
   useEffect(()=> {
@@ -34,16 +34,17 @@ function CharactersList() {
     }
     
 
-if(isFetching===true){
-  return <p>Loading list</p>
-}
+
+    if (isFetching === true) {
+      return <h3>...Loading table of characters...</h3>;
+    }
 
   }
   return (
     <div>
 
 
-<DynamicTable characters={characters}></DynamicTable>    
+ {characters.length !== 0 && <DynamicTable characters={characters}></DynamicTable> }
 
 
 </div>
